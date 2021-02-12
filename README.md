@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) (i.e. Hooks, not redux as the original challenge said).
+Please read the .PDF file added here to understand the project.
 
 ## Available Scripts
 
