@@ -61,11 +61,13 @@ export const PostsList = (props: PostsListProps): JSX.Element => {
 
     const onClickDelete = useCallback(
         (id: number) => {
-            props.setPosts(props.posts.filter((post: Post) => {
+            const newPosts = props.posts.filter((post: Post) => {
                 if (post.id !== id){
                     return post
                 } 
-            }))
+            })
+            props.setPosts(newPosts)
+            localStorage.setItem('localStoragePosts', JSON.stringify(newPosts))
         },
         [props],
     )

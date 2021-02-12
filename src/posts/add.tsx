@@ -92,6 +92,7 @@ export const AddPost = (props: AddPostProps): JSX.Element => {
 
         const newPosts = [...props.posts, newPost]
         props.setPosts(newPosts)
+        localStorage.setItem('localStoragePosts', JSON.stringify(newPosts))
         onCancel()
     }
 

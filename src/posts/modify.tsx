@@ -60,6 +60,7 @@ export const Modify = (props: ModifyProps): JSX.Element => {
 
         const newPosts = [...props.posts.filter((p: Post) => p.id !== props.post.id ), post]
         props.setPosts(newPosts)
+        localStorage.setItem('localStoragePosts', JSON.stringify(newPosts))
         onCancel()
     }
 

@@ -26,12 +26,22 @@ function App() {
     paddingBottom: '200px'
   }
 
-  const [posts, setPosts] = useState([{
-    title: '',
-    content: '',
-    author: '',
-    id: 0,
-  }])
+  const getBasePosts = (): Posts => {
+    const posts = localStorage.getItem('localStoragePosts')
+    if (posts === null) {
+      return [{
+        title: '',
+        content: '',
+        author: '',
+        id: 0,
+      }]
+    }
+    return JSON.parse(posts)
+  }
+
+  const basePosts = getBasePosts()
+
+  const [posts, setPosts] = useState(basePosts)
 
   const [isAddPostAvailable, setIsAddPostAvailable] = useState(true)
   return (
